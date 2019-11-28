@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/* 这里定义了一些常用的样式，便于其他地方使用 */
+.fullhight{
+	height: 390px;
+	overflow: auto;
+}
+.message-title{
+	color: #63B8FF;
+	font-size: 16px;
+}
+
+.left-menu-icon{
+	width: 18px;
+}
+
+.spanLink{
+	color:#87CEEB;
+	cursor:pointer;
+}
+
+.spanLinkTr{
+	height: 40px;
+}

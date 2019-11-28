@@ -1,0 +1,139 @@
+<section th:fragment="header">
+	<!-- top -->
+	<div class="container">
+		<div class="logo">
+			<a href="index.jsp">图书馆借阅管理系统</a>
+		</div>
+		<div class="left_open">
+			<i title="展开左侧栏" class="iconfont">&#xe699;</i>
+		</div>
+		<ul class="layui-nav right">
+			<input type="hidden" id="userId" th:value="1"/><!-- ${user.userId} -->
+			<!-- ${user.userName == null ? '???' : user.userName} -->
+			<li class="layui-nav-item"><a href="javascript:;"><span th:text="A"></span></a>
+				<dl class="layui-nav-child">
+					<!-- 二级菜单 -->
+					<dd>
+						<a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人中心</a>
+					</dd>
+					<dd>
+						<a href="/loginOut">退出登录</a>
+					</dd>
+				</dl></li>
+			<li class="layui-nav-item to-index"><a href="/index">系统首页</a></li>
+		</ul>
+	</div>
+	
+	<!-- left -->
+	<div class="left-nav">
+		<div id="side-nav">
+			<ul id="nav">
+				<li>
+					<a href="javascript:;">
+						<i class="iconfont">&#xe6b8;</i>
+						<cite>组织管理</cite>
+						<i class="iconfont nav_right">&#xe697;</i>
+					</a>
+					<ul class="sub-menu">
+						<li shiro:hasAnyRoles="admin,manager">
+							<a _href="/organization/departmentListPage">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>部门信息</cite>
+							</a>
+						</li>
+						<li shiro:hasAnyRoles="admin,manager">
+							<a _href="/organization/positionListPage">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>职位信息</cite>
+							</a>
+						</li>
+						<li>
+							<a _href="/account/userListPage">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>用户信息</cite>
+							</a>
+						</li>
+						<li>
+							<a _href="/organization/structure">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>组织结构</cite>
+							</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li shiro:hasAnyRoles="admin,manager">
+					<a href="javascript:;">
+						<i class="iconfont">&#xe629;</i> 
+						<cite>权限管理</cite>
+						<i class="iconfont nav_right">&#xe697;</i>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a _href="/authority/roleListPage">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>角色信息</cite>
+							</a>
+						</li>
+						<li>
+							<a _href="/authority/resourceListPage">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>资源信息</cite>
+							</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="javascript:;"> 
+						<i class="iconfont">&#xe607;</i> 
+						<cite>资产管理</cite>
+						<i class="iconfont nav_right">&#xe697;</i>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a _href="/property/grantPropertyListPage">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>我的资产</cite>
+							</a>
+						</li>
+						<li shiro:hasAnyRoles="admin,manager">
+							<a _href="/property/scrapPropertyListPage">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>报废资产</cite>
+							</a>
+						</li>
+						<li shiro:hasAnyRoles="admin,manager">
+							<a _href="/property/propertyListPage">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>资产库存</cite>
+							</a>
+						</li>
+					</ul>
+				</li>
+				
+				<li>
+					<a href="javascript:;"> 
+						<i class="iconfont">&#xe607;</i> 
+						<cite>流程管理</cite>
+						<i class="iconfont nav_right">&#xe697;</i>
+					</a>
+					<ul class="sub-menu">
+						<li>
+							<a _href="/flow/applyListPage">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>我的申请</cite>
+							</a>
+						</li>
+						<li shiro:hasAnyRoles="admin,manager">
+							<a _href="/flow/flowListPage">
+								<i class="iconfont">&#xe6a7;</i>
+								<cite>申请批准</cite>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>

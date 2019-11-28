@@ -1,0 +1,64 @@
+<section>
+	<div class="x-body">
+		<blockquote class="layui-elem-quote">欢迎进入企业资产管理系统！v1.0；登录时间：<span th:text="${loginTime}"></span></blockquote>
+		<fieldset class="layui-elem-field">
+			<legend>信息总览</legend>
+			<div class="layui-field-box">
+				<table class="layui-table">
+					<thead>
+						<tr>
+							<th colspan="2" scope="col">您的账户信息</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th width="30%">您的账号</th>
+							<td><span th:text="${user.account}"></span></td>
+						</tr>
+						<tr>
+							<td>您的姓名</td>
+							<td><span th:text="${user.userName}"></span></td>
+						</tr>
+						<tr>
+							<td>您的登录时间</td>
+							<td><span th:text="${loginTime}"></span></td>
+						</tr>
+						<tr>
+							<td>您的IP地址</td>
+							<td><span th:text="${localIp}"></span></td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="layui-table">
+					<thead>
+						<tr>
+							<th colspan="2" scope="col">服务器信息</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th width="30%">本系统访问路径</th>
+							<td><span th:text="${loacalUrl}"></span></td>
+						</tr>
+						<tr>
+							<td>服务器名称</td>
+							<td><span th:text="${serverName}"></span></td>
+						</tr>
+						<tr>
+							<td>服务器ip地址</td>
+							<td><span th:text="${localIp}"></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</fieldset>
+		<!-- 示例：调用父窗口的某个方法 -->
+		<blockquote class="layui-elem-quote layui-quote-nm">
+			本系统前端框架支持：X-admin（<a
+				onclick="parent.x_admin_show('X-admin主页','http://x.xuebingsi.com/')">http://x.xuebingsi.com/</a>）；
+			前端框架整合：胡江（hujiangyx@163.com）； 项目开发：企业资产管理系统（<a
+				onclick="parent.x_admin_show('企业资产管理系统主页','http://localhost/login')">http://localhost/login</a>）java
+			EE项目组
+		</blockquote>
+	</div>
+</section>
